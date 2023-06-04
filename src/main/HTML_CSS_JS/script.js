@@ -37,3 +37,19 @@ true;
 }
 }
 
+function validateForm() {
+let x = document.formsregistration.username.value;
+let y = document.registration.password.value;
+let x = document.registration.Repeat.value;
+let x = document.registration.address.value;
+let x = document.registration.email.value;
+}
+if (x.length<6){
+alert("username should be minimum 6 characters");
+return false;
+}
+
+else if(y.length<8{
+alert("Password should be minimum eight characters");
+return false;
+}
