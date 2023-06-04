@@ -9,3 +9,8 @@ label {
 #l1{
 color: blue;
 }
+
+*{
+   box-sizing: border-box;
+}
+

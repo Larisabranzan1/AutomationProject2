@@ -1,0 +1,45 @@
+
+.row{
+text-align: center;
+background-color: royalblue;
+}
+
+.environment{
+font-size: 1em;
+}
+
+body {
+  background-color: #D5DBDB;
+}
+
+div {
+  border-block-color: pink lightblue;
+}
+
+#id3{
+color: blue;
+ text-align: center;
+}
+
+table, th, td {
+  border: 2px solid;
+  color: black;
+}
+
+.column {
+  float: left;
+  width: 23.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.img{
+   width:100px;
+   height:100px;
+}
