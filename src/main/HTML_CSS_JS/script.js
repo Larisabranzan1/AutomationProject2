@@ -38,11 +38,13 @@ true;
 }
 
 function validateForm() {
-let x = document.formsregistration.username.value;
+let x = document.registration.username.value; // not sure why it doesn't work
 let y = document.registration.password.value;
-let x = document.registration.Repeat.value;
-let x = document.registration.address.value;
-let x = document.registration.email.value;
+let z = document.registration.Repeat.value;
+let m = document.registration.address.value;
+let n = document.registration.email.value;
+var atposition=n.indexOf("@");
+var dotposition=n.lastIndexOf(".");
 }
 if (x.length<6){
 alert("username should be minimum 6 characters");
@@ -52,4 +54,16 @@ return false;
 else if(y.length<8{
 alert("Password should be minimum eight characters");
 return false;
+}
+
+
+function matchPassword() {
+ var pw1 = document.getElementById("pass");
+  var pw2 = document.getElementById("passrepeat");
+  if(pw1 != pw2)
+  {
+    alert("Passwords did not match");
+  } else {
+    alert("Password created successfully");
+  }
 }
