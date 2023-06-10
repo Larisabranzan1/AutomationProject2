@@ -19,51 +19,48 @@ function readInputText() {
 }
 
 
-function validate()
 
-{
-var username = document.getElementById("username");
-var password = document.getElementById("pass");
 
-if (username.value.trim() =="" ||password.value.trim
-()=="")
-{
- alert("No blank values allowed);
- return false;
- }
-else
-{
-true;
-}
-}
 
 function validateForm() {
-let x = document.registration.username.value; // not sure why it doesn't work
-let y = document.registration.password.value;
-let z = document.registration.Repeat.value;
-let m = document.registration.address.value;
-let n = document.registration.email.value;
-var atposition=n.indexOf("@");
-var dotposition=n.lastIndexOf(".");
-}
-if (x.length<6){
-alert("username should be minimum 6 characters");
-return false;
-}
+  var x = document.registration.username.value;
+  var y = document.registration.pass.value;
+  var z = document.registration.passrepeat.value;
+  var m = document.registration.txtarea1.value;
+  var n = document.registration.email.value;
+  var atposition = n.indexOf("@");
+  var dotposition = n.lastIndexOf(".");
 
-else if(y.length<8{
-alert("Password should be minimum eight characters");
-return false;
-}
-
-
-function matchPassword() {
- var pw1 = document.getElementById("pass");
-  var pw2 = document.getElementById("passrepeat");
-  if(pw1 != pw2)
-  {
+  if (x.length < 6) {
+    alert("Username should be a minimum of 6 characters");
+    return false;
+  } else if (y.length < 8) {
+    alert("Password should be a minimum of 8 characters");
+    return false;
+  } else if (y !== z) {
     alert("Passwords did not match");
+    return false;
+  } else if (m.trim() === "") {
+    alert("Please enter an address");
+    return false;
+  } else if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= n.length) {
+    alert("Please enter a valid email address");
+    return false;
+  }
+
+  return true;
+  }
+
+
+// below code did not work, I will need some clarifications on it
+  function validate() {
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("pass").value;
+
+  if (username.trim() === "" || password.trim() === "") {
+    alert("No blank values allowed");
+    return false;
   } else {
-    alert("Password created successfully");
+    return true;
   }
 }
