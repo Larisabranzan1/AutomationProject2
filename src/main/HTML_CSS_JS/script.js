@@ -46,11 +46,15 @@ function validateForm() {
   } else if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= n.length) {
     alert("Please enter a valid email address");
     return false;
+  } else {
+    var name = prompt("Please enter your name:");
+    if (name) {
+      alert("Hello, " + name + "! Registration is successful.");
+    }
   }
 
   return true;
-  }
-
+}
 
 // below code did not work, I will need some clarifications on it
   function validate() {
