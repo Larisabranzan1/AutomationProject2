@@ -98,5 +98,42 @@ public class Course01 {
         } else {
             System.out.println("Numarul este 0");
         }
+
+        int a1 = 3;
+        int b1 = 4;
+
+        if (a1 > b1) {
+            System.out.println("A is bigger");
+        } else if (a1 < b1) {
+            System.out.println("B is bigger");
+        } else {
+            System.out.println("They're equal");
+        }
+
+        String letter = "D";
+        switch (letter) {
+            case "A":
+                System.out.println("apples");
+           case "B":
+                System.out.println("beer");
+                break;
+            case "C":
+                System.out.println("cider");
+                break;
+            case "D":
+                System.out.println("ding dong");
+                break;
+            default:
+                System.out.println("We only learned A, B, C");
+        }
+
+        int x = 0;
+        while(x < 25)
+        {
+            System.out.println(x);
+            x++;
+        }
     }
+
+
 }
