@@ -2,19 +2,22 @@ package ro.sit.homework.javaobjects;
 
 public class Author {
 
-    String name;;
-    String email;
 
-    Author  (String name, String email) {
-  this.name = name;
-  this.email = email;
+    private String authorName;
+    private String authorEmail;
+
+    public Author(String authorName, String authorEmail) {
+        this.authorName = authorName;
+        this.authorEmail = authorEmail;
     }
 
-    String getName() {
-        return name;
+    public String getAuthorName() {
+        return authorName;
     }
 
-    String getEmail () {
-        return email;
+    public String getAuthorEmail() {
+        return authorEmail;
     }
+
 }
+

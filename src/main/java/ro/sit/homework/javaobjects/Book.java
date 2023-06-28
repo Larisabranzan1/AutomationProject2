@@ -2,33 +2,42 @@ package ro.sit.homework.javaobjects;
 
 public class Book {
 
-     String name ;
-     int year ;
-     double price;
 
     Author author;
 
-    Book (String name, int year, double price, Author author ) {
+    private String name;
+    private int year;
+    private double price;
+
+
+    public Book(String name, int year, double price) {
         this.name = name;
         this.year = year;
         this.price = price;
         this.author = author;
     }
 
-
-     String getName() {
-        return name;
+    public Book(String authorName, String authorEmail, String name, int year, double price) {
+        this.author = new Author(authorName, authorEmail);
+        this.name = name;
+        this.year = year;
+        this.price = price;
     }
 
-    Author getAuthor () {
+    public Author getAuthor() {
         return author;
     }
 
-    Double getPrice () {
+    public String getName() {
+        return name;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public double getPrice() {
         return price;
     }
 
-    int getYear () {
-        return year;
-    }
 }

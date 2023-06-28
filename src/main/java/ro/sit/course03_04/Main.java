@@ -1,4 +1,4 @@
-package ro.sit.course03;
+package ro.sit.course03_04;
 public class Main {
     public static void test(String[] args) {
 
