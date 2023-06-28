@@ -1,6 +1,6 @@
-package ro.sit.course;
+package ro.sit.homework.homework03;
 
-public class Draw {
+public class DrawClass {
 
     public static void main(String[] args) {
         if (args.length == 1) {
@@ -152,3 +152,4 @@ public class Draw {
 }
 
 //cand ai mai multe metode cu acelasi nume. Cand se incarca clasa noastra cu acelasi lucru;
+
