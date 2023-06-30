@@ -14,8 +14,14 @@ public class DrawClass {
         System.out.println("--------");
         System.out.println();
         drawShapeOutline(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
-        drawShapeOutlineHomework(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
-        drawShapeOutlineHomework2(Integer.parseInt(args[0]));
+
+        printShapeName("Only Corners Rectangle");
+        drawShapeCornersHomework(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
+
+        printShapeName("Only corners square Square");
+        drawShapeCornersHomework2(Integer.parseInt(args[0]));
+
+        printShapeName("Empty Square Homework Ex 3");
         drawShapeOutlineHomework3(Integer.parseInt(args[0]));
 
     }
@@ -37,7 +43,7 @@ public class DrawClass {
 
     //    method 2 for drawShapeOutline
     private static void drawShapeOutline(int width, int height) {
-        printShapeName("Empty rectangle");
+
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < height; j++) {
                 if (i == 0 || i == (width - 1) || j == 0 || j == (height - 1)) {
@@ -50,8 +56,8 @@ public class DrawClass {
         }
     }
 
-    private static void drawShapeOutlineHomework(int width, int height) {
-        printShapeName("Only Corners Rectangle");
+    private static void drawShapeCornersHomework(int width, int height) {
+
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < height; j++) {
                 if ((i == 0 && (j == 0 || j == height - 1)) ||
@@ -65,10 +71,10 @@ public class DrawClass {
         }
     }
 
-    public static void drawShapeOutlineHomework2(int squareSide) {
-        printShapeName("Square");
-        for (int i = 0; i < squareSide; i++) {
-            for (int j = 0; j < squareSide; j++) {
+    public static void drawShapeCornersHomework2(int squareSide) {
+
+   /*    for (int i = 0; i < squareSide; i++) {
+           for (int j = 0; j < squareSide; j++) {
                 if ((i == 0 && (j == 0 || j == squareSide - 1)) ||
                         (i == squareSide - 1 && (j == 0 || j == squareSide - 1))) {
                     System.out.print("*");
@@ -77,12 +83,14 @@ public class DrawClass {
                 }
             }
             System.out.println();
-        }
+        } */
+        drawShapeCornersHomework(squareSide,squareSide);
     }
 
+
     public static void drawShapeOutlineHomework3(int squareSide) {
-        printShapeName("Empty Square Homework Ex 3");
-        for (int i = 0; i < squareSide; i++) {
+
+ /*       for (int i = 0; i < squareSide; i++) {
             for (int j = 0; j < squareSide; j++) {
                 if (i == 0 || i == squareSide - 1 || j == 0 || j == squareSide - 1) {
                     System.out.print("*");
@@ -91,7 +99,8 @@ public class DrawClass {
                 }
             }
             System.out.println();
-        }
+        }*/
+        drawShapeOutline(squareSide,squareSide);
     }
 
     private static void drawShapeOutline(int squareSide) {

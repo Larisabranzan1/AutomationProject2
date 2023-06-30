@@ -4,7 +4,7 @@ public class CarBrands {
 
     private  float maxSpeed = 240;
 
-    private byte maxGear = 6;
+    private int maxGear = 6;
 
     private String fuelType;
     private String brand;
@@ -16,7 +16,7 @@ public class CarBrands {
     }
 
 
-    public CarBrands(float maxSpeed, byte maxGear, String fuelType, String brand, String model) {
+    public CarBrands(float maxSpeed, int maxGear, String fuelType, String brand, String model) {
         this.maxSpeed = maxSpeed;
         this.maxGear = maxGear;
         this.fuelType = fuelType;
@@ -32,7 +32,7 @@ public class CarBrands {
         return maxSpeed;
     }
 
-    public byte getMaxGear() {
+    public int getMaxGear() {
         return maxGear;
     }
 
@@ -43,4 +43,17 @@ public class CarBrands {
     public String getModel() {
         return model;
     }
+
+
+    @Override
+    public String toString() {
+        return "{" +
+                "maxSpeed=" + maxSpeed +
+                ", maxGear=" + maxGear +
+                ", fuelType='" + fuelType + '\'' +
+                ", brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                '}';
+    }
 }
+
