@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class Main {
+public class  Main {
 
     public static void main(String[] args) {
         Catalog catalog = new Catalog();
