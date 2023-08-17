@@ -1,5 +1,6 @@
 package PageObjects;
 
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -39,7 +40,8 @@ public class LoginPage {
     @FindBy(xpath = "//input[@id='pass']/../..//small")
     private WebElement passErr;
 
-
+    @FindBy(css = "a[href*='cookie']")
+    private WebElement cookieButtonElement;
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -87,4 +89,20 @@ public class LoginPage {
         wait.until(ExpectedConditions.visibilityOf(registerPageBtn));
         registerPageBtn.click();
     }
+
+    public void goToCookiePage() {
+        wait.until(ExpectedConditions.visibilityOf(cookieButtonElement));
+        cookieButtonElement.click();
+        Cookie cookie = new Cookie("cookiePageTitle", "The gibberish talking cookie");
+        driver.manage().addCookie(cookie);
+//        return new CookiePage(driver);
+    }
+
+  //  public CookiePage goToCookiePage(){
+  //      wait.until(ExpectedConditions.visibilityOf(cookieButtonElement));
+  //      cookieButtonElement.click();
+ //      return new CookiePage(driver);
+ //   }
+
+
 }
