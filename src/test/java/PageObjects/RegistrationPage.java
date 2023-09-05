@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import ro.sit.course06_07.MyCustomException;
 import org.openqa.selenium.interactions.MoveTargetOutOfBoundsException;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
@@ -65,7 +66,7 @@ public class RegistrationPage {
 
 
     @FindBy(xpath = "//Input[@id='username']/../..//small[2]")
-    private WebElement usernameErr;
+    private WebElement  usernameErr;
     //Please choose a shorter username
 
     @FindBy(xpath = "//Input[@id='password1']/../..//small[2]")
@@ -83,7 +84,7 @@ public class RegistrationPage {
 
     public RegistrationPage(WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, 15);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         PageFactory.initElements(driver, this);
         actions = new Actions(driver);
     }
@@ -178,7 +179,7 @@ public class RegistrationPage {
 
     public void clickRegisterBtn(){
         Actions clickAction = new Actions(driver);
-        wait = new WebDriverWait(driver, 10);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(presenceOfElementLocated(By.xpath("//button")));
         clickAction.moveToElement(submitButton);
         submitButton.sendKeys(Keys.ENTER);

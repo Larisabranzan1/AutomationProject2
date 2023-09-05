@@ -3,6 +3,7 @@ package Tests;
 import PageObjects.AccountPage;
 import PageObjects.LoginPage;
 import PageObjects.RegistrationPage;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -11,6 +12,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import ro.sit.course06_07.MyCustomException;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class RegistrationTest extends BaseTest {
@@ -19,6 +21,8 @@ public class RegistrationTest extends BaseTest {
     AccountPage accountPage;
     RegistrationPage registrationPage;
     WebElement registerPage;
+    WebDriver driver;
+    WebDriverWait wait;
 
 
     @DataProvider(name = "registerNegativeDpUserShortLong")
@@ -316,7 +320,7 @@ public class RegistrationTest extends BaseTest {
         registrationPage.passwordInputRegistration(password);
         registrationPage.passwordConfirmInput(password2);
         registrationPage.clickTermsCheckboxUsingActionsScroll();
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
         do {
             registrationPage.isCheckBoxSelected();

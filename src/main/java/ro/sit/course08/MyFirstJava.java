@@ -12,10 +12,15 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+
 public class MyFirstJava {
+
+    WebDriver driver;
+    WebDriverWait wait;
     @Test
     public void htmlUnitDriverTest() {
         WebDriver htmlUnitDriver = new HtmlUnitDriver();
@@ -121,7 +126,7 @@ public class MyFirstJava {
         WebDriver chromeDriver = new ChromeDriver();
 //        chromeDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         chromeDriver.manage().window().maximize();
-        WebDriverWait wait = new WebDriverWait(chromeDriver, 10);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         chromeDriver.get("http://86.121.249.151:4999/");
         List<WebElement> sidebarButtonsElements =
                 chromeDriver.findElements(By.xpath("//div[@class='sidebar']/a[not(@target)]"));

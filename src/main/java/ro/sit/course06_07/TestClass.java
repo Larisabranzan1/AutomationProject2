@@ -1,8 +1,8 @@
 package ro.sit.course06_07;
 
-import jdk.nashorn.internal.ir.annotations.Ignore;
+
 import org.junit.*;
-import org.junit.jupiter.api.Test;
+
 
 public class TestClass {
 

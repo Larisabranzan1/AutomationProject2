@@ -10,6 +10,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public class LoginPage {
     WebDriver driver;
     WebDriverWait wait;
@@ -40,12 +42,26 @@ public class LoginPage {
     @FindBy(xpath = "//input[@id='pass']/../..//small")
     private WebElement passErr;
 
-    @FindBy(css = "a[href*='cookie']")
+
+    @FindBy(css = "a[href*='alerts']")
     private WebElement cookieButtonElement;
+
+    @FindBy(css = "a[href*='alerts']")
+    private WebElement alertsButtonElement;
+
+    @FindBy(css = "a[href*='hover']")
+    private WebElement hoverButtonElement;
+
+    @FindBy(css = "a[href*='modal']")
+    private WebElement modalButtonElement;
+
+
+    @FindBy(css = "a[href*='signup']")
+    private WebElement signUpButtonElement;
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, 15);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         PageFactory.initElements(driver, this);
     }
 
@@ -98,7 +114,25 @@ public class LoginPage {
 //        return new CookiePage(driver);
     }
 
-  //  public CookiePage goToCookiePage(){
+
+    public void goToAlertsPage() {
+        wait.until(ExpectedConditions.visibilityOf(alertsButtonElement));
+        alertsButtonElement.click();
+    }
+
+    public void goToHoverPage() {
+        wait.until(ExpectedConditions.visibilityOf(hoverButtonElement));
+        hoverButtonElement.click();
+    }
+
+    public void goToModalPage() {
+        wait.until(ExpectedConditions.visibilityOf(modalButtonElement));
+        modalButtonElement.click();
+    }
+
+
+
+    //  public CookiePage goToCookiePage(){
   //      wait.until(ExpectedConditions.visibilityOf(cookieButtonElement));
   //      cookieButtonElement.click();
  //      return new CookiePage(driver);
